@@ -18,8 +18,8 @@ function make_link() {
     fi
 }
 
-git submodule init 
-git submodule update 
+git submodule init
+git submodule update
 
 cp vim/pathogen/autoload/pathogen.vim vim/autoload/pathogen.vim
 

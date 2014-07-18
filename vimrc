@@ -59,25 +59,21 @@ set grepprg=grep\ -nH\ $*
 " found
 set tags=.git/tags
 
-if ! exists('g:TagHighlightSettings')
-    let g:TagHighlightSettings = {}
-endif
-let g:TagHighlightSettings['TagFileName'] = '.git/tags'
-let g:TagHighlightSettings['TypesFileDirectory']=".git"
-
-" allow unsing the mouse
+" allow using the mouse
 set mouse=a
 " always show statusline
 set laststatus=2
 
-" Latex settings
-let g:tex_flavor='latex'
+" fugitive status line
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
-let g:localvimrc_ask = 1
-" enable mouse inside vimwiki
-let g:vimwiki_use_mouse=1
+" show invisible characters
+set list
+" som alternatives: tab:▸\,eol:¬
+set listchars=tab:\|\ ,trail:…
 
-let g:xml_syntax_folding=1
+" clear trailing spaces on save
+autocmd BufWritePre * kz|:%s/\s\+$//e|'z
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
@@ -118,24 +114,10 @@ if has("autocmd")
     au BufWinLeave *.* mkview
     au BufWinEnter *.* silent loadview
 
-
-    " enable vimwiki foldings
-    autocmd FileType vimwiki let g:vimwiki_folding=1
-    autocmd FileType vimwiki let g:vimwiki_fold_lists=1
-
-    autocmd FileType java set makeprg=ant
-    autocmd FileType java set efm=\ %#[javac]\ %#%f:%l:%c:%*\\d:\ %t%[%^:]%#:%m,\%A\ %#[javac]\ %f:%l:\ %m,%-Z\ %#[javac]\ %p^,%-C%.%#
-
     " shortcut go to last active tab
     let g:lasttab = 1
     nmap <Leader>tl :exe "tabn ".g:lasttab<CR>
     au TabLeave * let g:lasttab = tabpagenr()
-
-    au FileType tex let b:tex_flavor='pdflatex'
-    au FileType tex compiler tex
-    au FileType tex set makeprg=pdflatex\ \-file\-line\-error\ \-interaction=nonstopmode\ $*\\\|\ grep\ \-P\ ':\\d{1,5}:\ '
-    au FileType tex set errorformat=%f:%l:\ %m
-    au FileType tex nnoremap <leader>rr :w<CR>:make %<CR>:cwindow<CR>
 
     au FileType python nnoremap <leader>rr :w<CR>:!python %<CR>
 endif " has("autocmd")
@@ -164,25 +146,10 @@ map <silent> <Leader>cc :make %<Return>:cw<Return>
 map <silent> <Leader>cp :cprevious<Return>
 map <silent> <Leader>cn :cnext<Return>
 
-"autocmd FileType java set foldmethod=syntax
-map <silent> <Leader>zz :set foldmethod=syntax<CR>:set foldmethod=manual<CR>
-
 " edit vimrc
 map <silent> <Leader>rc :e ~/.vimrc<CR>
 " load vimrc
 map <silent> <Leader>rl :so ~/.vimrc<CR>
-
-" some mappings for easy folding
-nmap <silent> <Leader>f0 :set foldlevel=0<CR>
-nmap <silent> <Leader>f1 :set foldlevel=1<CR>
-nmap <silent> <Leader>f2 :set foldlevel=2<CR>
-nmap <silent> <Leader>f3 :set foldlevel=3<CR>
-nmap <silent> <Leader>f4 :set foldlevel=4<CR>
-nmap <silent> <Leader>f5 :set foldlevel=5<CR>
-nmap <silent> <Leader>f6 :set foldlevel=6<CR>
-nmap <silent> <Leader>f7 :set foldlevel=7<CR>
-nmap <silent> <Leader>f8 :set foldlevel=8<CR>
-nmap <silent> <Leader>f9 :set foldlevel=9<CR>
 
 " map ' to ` and vice versa
 nnoremap ' `
@@ -204,14 +171,10 @@ nnoremap <silent> g0 :tabfirst<CR>
 " go to last tab
 nnoremap <silent> g$ :tablast<CR>
 
-nnoremap <C-l> <C-w><C-l>
-nnoremap <C-h> <C-w><C-h>
-nnoremap <C-j> <C-w><C-j>
-nnoremap <C-k> <C-w><C-k>
-
 " keep in visual-mode after shifting with >/<
 vnoremap > >gv
 vnoremap < <gv
 noremap <Up> gk
 noremap <Down> gj
+
 
