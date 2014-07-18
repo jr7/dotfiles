@@ -1,0 +1,13 @@
+vim-gnome
+libglib2.0-dev libgtk-3-dev libnotify-dev libpulse-dev libx11-dev autoconf automake pkg-config
+cmake
+
+pa-applet: git@github.com:fernandotcl/pa-applet.git
+
+no-desktop-i3: settings set org.gnome.desktop.background show-desktop-icons false
+
+dualscreen-config-file: see /etc/mnm?
+
+
+i3 from source
+j4-dmenu-desktop: git@github.com:enkore/j4-dmenu-desktop.git
