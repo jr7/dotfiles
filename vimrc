@@ -177,4 +177,6 @@ vnoremap < <gv
 noremap <Up> gk
 noremap <Down> gj
 
-
+"map ctags travelbuttons
+nnoremap ) <C-]>
+nnoremap ( <C-t>
