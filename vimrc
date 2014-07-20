@@ -174,8 +174,13 @@ nnoremap <silent> g$ :tablast<CR>
 " keep in visual-mode after shifting with >/<
 vnoremap > >gv
 vnoremap < <gv
-noremap <Up> gk
-noremap <Down> gj
+" disable neo arrokeys in insert mode
+inoremap <Up> <nop>
+inoremap <Down> <nop>
+inoremap <Left> <nop>
+inoremap <Right> <nop>
+inoremap <Home> <nop>
+inoremap <End> <nop>
 
 "map ctags travelbuttons
 nnoremap ) <C-]>
