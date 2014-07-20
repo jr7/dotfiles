@@ -182,6 +182,15 @@ inoremap <Right> <nop>
 inoremap <Home> <nop>
 inoremap <End> <nop>
 
+"map window mod keys
+nnoremap j <C-w>
+nnoremap jj <C-w><C-w>
+
+nnoremap jl <C-w><C-k>
+nnoremap ja <C-w><C-j>
+nnoremap ji <C-w><C-h>
+nnoremap je <C-w><C-l>
+
 "map ctags travelbuttons
 nnoremap ) <C-]>
 nnoremap ( <C-t>
