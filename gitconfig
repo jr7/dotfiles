@@ -59,6 +59,7 @@
 
   # Force update from server (looses all local modifications!)
     force-update = !git fetch; git reset --hard FETCH_HEAD
+	loc = log --oneline --graph --relative-date --decorate
 
 [push]
     default = tracking

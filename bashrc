@@ -118,4 +118,4 @@ function git_diff() {
 #set term=screen-256color
 
 export TERM=xterm-256color
-
+export PYTHONPATH=~/programming/curb/pycurb:$PYTHONPATH
