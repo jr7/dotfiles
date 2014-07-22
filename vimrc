@@ -142,7 +142,6 @@ nmap <silent> <leader>- :resize -4<CR>
 nmap <silent> + :vertical resize +4<CR>
 nmap <silent> - :vertical resize -4<CR>
 
-map <silent> <Leader>cc :make %<Return>:cw<Return>
 map <silent> <Leader>cp :cprevious<Return>
 map <silent> <Leader>cn :cnext<Return>
 
@@ -191,6 +190,14 @@ nnoremap ja <C-w><C-j>
 nnoremap ji <C-w><C-h>
 nnoremap je <C-w><C-l>
 
+nnoremap j<Up> <C-w>K
+nnoremap j<Down> <C-w>J
+nnoremap j<Left> <C-w>H
+nnoremap j<Right> <C-w>L
+
 "map ctags travelbuttons
 nnoremap ) <C-]>
 nnoremap ( <C-t>
+
+"map git grep to strg+g
+nnoremap <C-g> :execute "Ggrep '\\<" . expand('<cword>') . "\\>'"<CR>:cw<CR>
