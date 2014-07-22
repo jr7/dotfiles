@@ -119,3 +119,8 @@ function git_diff() {
 
 export TERM=xterm-256color
 export PYTHONPATH=~/programming/curb/pycurb:$PYTHONPATH
+export PYTHONPATH=$PYTHONPATH:~/mpi/analyzer:~/mpi/pycell
+
+c(){
+    ssh -X cuda0$1
+}
