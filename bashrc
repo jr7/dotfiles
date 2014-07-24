@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+#e ~/.bashrc: executed by bash(1) for non-login shells.
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -97,7 +97,7 @@ export EDITOR='vim'
 set -o vi
 
 alias lslah='ls -lah'
-
+alias ipy='ipython --pylab'
 #git prompt
 function parse_git_dirty {
     [[ $(git diff-index --quiet --cached HEAD 2> /dev/null) ]] && echo "*"
