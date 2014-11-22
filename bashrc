@@ -98,6 +98,7 @@ set -o vi
 
 alias lslah='ls -lah'
 alias ipy='ipython --pylab'
+alias alf='ssh alf -c arcfour,blowfish-cbc -XC'
 #git prompt
 function parse_git_dirty {
     [[ $(git diff-index --quiet --cached HEAD 2> /dev/null) ]] && echo "*"
