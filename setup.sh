@@ -7,6 +7,7 @@ link_list+=("inputrc:$HOME/.inputrc")
 link_list+=("vimrc:$HOME/.vimrc")
 link_list+=("vim:$HOME/.vim")
 link_list+=("gitconfig:$HOME/.gitconfig")
+link_list+=("sshconfig:$HOME/.ssh/config")
 
 function make_link() {
     if [ ! -e $2 ]
