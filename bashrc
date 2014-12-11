@@ -119,7 +119,7 @@ function git_diff() {
 #set term=screen-256color
 
 export TERM=xterm-256color
-export PYTHONPATH=~/programming/curb/pycurb:$PYTHONPATH
+export PYTHONPATH=~/programming/curb:$PYTHONPATH
 export PYTHONPATH=$PYTHONPATH:~/mpi/analyzer:~/mpi/pycell
 
 c(){
